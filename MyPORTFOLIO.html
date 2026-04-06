@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO - Web Developer & AI Engineer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Chart.js for visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <!-- Importing Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles for animations and mobile menu */
+        * {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background for contrast */
+        }
+        
+        /* Custom animations for the mobile burger menu */
+        .burger div {
+            transition: all 0.3s ease;
+        }
+
+        .toggle .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        .toggle .line2 {
+            opacity: 0;
+        }
+        .toggle .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navigation (Dark Blue/Gray background) -->
+    <nav class="fixed w-full bg-gray-900 shadow-xl z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo: Changed to PORTFOLIO -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-2xl font-extrabold text-white">
+                        My<span class="text-orange-500">PORTFOLIO</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Links -->
+                <div class="hidden md:block">
+                    <ul class="flex space-x-4 nav-links">
+                        <li><a href="#home" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a></li>
+                        <li><a href="#skills" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Skills</a></li>
+                        <li><a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Menu Button (Burger) -->
+                <div class="md:hidden">
+                    <div class="burger cursor-pointer p-2">
+                        <div class="line1 w-6 h-0.5 bg-white my-1"></div>
+                        <div class="line2 w-6 h-0.5 bg-white my-1"></div>
+                        <div class="line3 w-6 h-0.5 bg-white my-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div class="hidden md:hidden absolute top-16 right-0 w-2/3 bg-gray-900 shadow-lg nav-links transition duration-300 ease-in-out transform -translate-x-full" id="mobile-menu">
+            <ul class="flex flex-col py-2 space-y-1">
+                <li><a href="#home" class="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition duration-300">Home</a></li>
+                <li><a href="#about" class="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition duration-300">About</a></li>
+                <li><a href="#skills" class="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition duration-300">Skills</a></li>
+                <li><a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition duration-300">Projects</a></li>
+                <li><a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home/Hero Section - Dark Blue Background with Orange Accents -->
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center p-6 pt-24 text-white relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center" 
+             style="background-image: url('https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        </div>
+        <!-- Dark Blue Overlay for better text contrast -->
+        <div class="absolute inset-0 bg-gray-900 opacity-90"></div>
+        
+        <div class="max-w-4xl relative z-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 animate-pulse">
+                Hello, I'm <span class="text-orange-400">Antaran Adhwaryu</span>
+            </h1>
+            <!-- Updated role description -->
+            <p class="text-xl md:text-2xl font-light mb-10 text-gray-300">
+                A passionate <span class="text-orange-400 font-semibold">Frontend Developer</span> and <span class="text-orange-400 font-semibold">AI Engineer</span>, turning innovative ideas into dynamic, high-performance web applications.
+            </p>
+            <div class="flex justify-center flex-wrap gap-4">
+                <!-- Button 1: Orange accent -->
+                <a href="https://www.linkedin.com/in/antaran-adhwaryu-255696349" target="_blank" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105">
+                    Connect on LinkedIn
+                </a>
+                <!-- Button 2: Orange border -->
+                <a href="#projects" class="bg-transparent border-2 border-orange-500 text-orange-300 hover:bg-orange-500 hover:text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    View My Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (White Background) -->
+    <section id="about" class="py-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900 relative">
+                About Me
+                <!-- Orange underline -->
+                <div class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 h-1 w-16 bg-orange-500 rounded"></div>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row items-start md:space-x-12">
+                <!-- Profile Picture & Bio -->
+                <div class="w-full md:w-1/3 text-center mb-8 md:mb-0 order-1">
+                    <!-- Profile Picture Updated with new link and Orange ring -->
+                    <img 
+                        src="https://media.licdn.com/dms/image/v2/D4E03AQHlNbT8tmYlog/profile-displayphoto-crop_800_800/B4EZrqEHtXHcAI-/0/1764863542092?e=1767225600&v=beta&t=oRip8G5JG9yUoZFz4eZO8aa22sjs2bpBIwwlkrF5-pU" 
+                        alt="Antaran Adhwaryu Profile Picture" 
+                        class="w-48 h-48 object-cover rounded-full mx-auto ring-8 ring-orange-500 ring-opacity-30 shadow-2xl transition duration-500 hover:shadow-orange-500/50 hover:ring-orange-500/50"
+                        onerror="this.onerror=null; this.src='https://placehold.co/192x192/4F46E5/ffffff?text=AA'"
+                    >
+                    <p class="mt-4 text-xl font-semibold text-gray-700">Antaran Adhwaryu</p>
+                    <p class="text-sm text-gray-500">Frontend Developer & AI Engineer</p>
+                    <a href="https://github.com/meantaran" target="_blank" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-medium transition duration-300">
+                        View GitHub Profile &rarr;
+                    </a>
+                </div>
+                
+                <div class="w-full md:w-2/3 order-2">
+                    <!-- About Text -->
+                    <div class="mb-8 text-lg text-gray-600 leading-relaxed">
+                        <p class="mb-4">Hello! I'm Antaran, a developer with a deep passion for the craft of web development and emerging AI technologies. My primary goal is to transform complex ideas into functional, beautiful, and highly efficient digital experiences, leveraging both modern UI techniques and intelligent systems.</p>
+                        <p>I focus on writing clean, modern, and efficient code, prioritizing performance and exceptional user experience. My expertise lies primarily in the frontend, building robust user interfaces with modern JavaScript, while actively expanding my knowledge in AI implementation for web-based solutions.</p>
+                    </div>
+
+                    <!-- Interests Section -->
+                    <div class="mt-10 p-6 bg-gray-50 rounded-xl shadow-lg border border-gray-200">
+                        <h4 class="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Interests</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700">
+                            <div>
+                                <h5 class="font-bold text-orange-600">Tech Focus:</h5>
+                                <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
+                                    <li>Web Development</li>
+                                    <li>AI/ML Development</li>
+                                    <li>Hackathons</li>
+                                    <li>UI/UX ideas</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-orange-600">Personal Hobbies:</h5>
+                                <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
+                                    <li>Financial markets, Trading</li>
+                                    <li>Cooking</li>
+                                    <li>Travelling</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section (New Charts & Soft Skills) -->
+    <section id="skills" class="py-20 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900 relative">
+                Technical Skills & Core Competencies
+                <!-- Orange underline -->
+                <div class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 h-1 w-16 bg-orange-500 rounded"></div>
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                
+                <!-- Chart 1: Technical Proficiency (Bar Chart) -->
+                <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-xl border border-gray-200">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Technical Proficiency (Frontend & Programming)</h3>
+                    <div class="h-96">
+                        <canvas id="technicalSkillChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Tools & Platforms (Pie Chart) -->
+                <div class="bg-white p-6 rounded-xl shadow-xl border border-gray-200">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Tools & Platforms</h3>
+                    <div class="h-96 flex items-center justify-center">
+                        <canvas id="toolSkillChart" class="max-h-80"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Skills Badges (Orange color) -->
+            <div class="mt-12">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">Soft Skills</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-orange-100 text-orange-800 font-medium rounded-full shadow-md">Communication</span>
+                    <span class="px-4 py-2 bg-orange-100 text-orange-800 font-medium rounded-full shadow-md">Time Management</span>
+                    <span class="px-4 py-2 bg-orange-100 text-orange-800 font-medium rounded-full shadow-md">Creative Thinking</span>
+                    <span class="px-4 py-2 bg-orange-100 text-orange-800 font-medium rounded-full shadow-md">Marketing Concepts</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900 relative">
+                My Featured Work
+                <!-- Orange underline -->
+                <div class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 h-1 w-16 bg-orange-500 rounded"></div>
+            </h2>
+
+            <!-- Beginner Projects -->
+            <h3 class="text-3xl font-semibold mb-8 text-gray-800 border-b border-gray-300 pb-2">Beginner Level Projects</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                
+                <!-- Project 1: Taskshift (Orange links) -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-xl transition duration-500 transform hover:scale-[1.03] hover:shadow-2xl">
+                    <div class="h-36 flex items-center justify-center text-xl font-bold text-white bg-indigo-600 bg-opacity-90">
+                        Taskshift
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">Taskshift - To-Do App</h3>
+                        <p class="text-gray-600 mb-4 text-sm">A simple, efficient task management application built to help users quickly organize their daily tasks and boost productivity (Vanilla JS).</p>
+                        <a href="http://causal-copper-of1ad8n2ft.edgeone.dev" target="_blank" class="text-orange-600 hover:text-orange-800 font-semibold text-sm transition duration-300">
+                            View Live Project &rarr;
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2: NotifyMe (Orange links) -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-xl transition duration-500 transform hover:scale-[1.03] hover:shadow-2xl">
+                    <div class="h-36 flex items-center justify-center text-xl font-bold text-white bg-emerald-600 bg-opacity-90">
+                        NotifyMe
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">NotifyMe - Alerts System</h3>
+                        <p class="text-gray-600 mb-4 text-sm">A customized notification system prototype that provides timely alerts and messages using modern JavaScript interactions.</p>
+                        <a href="https://far-copper-8v0mlotjsm.edgeone.dev/" target="_blank" class="text-orange-600 hover:text-orange-800 font-semibold text-sm transition duration-300">
+                            View Live Project &rarr;
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3: TrackMe (Orange links) -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-xl transition duration-500 transform hover:scale-[1.03] hover:shadow-2xl">
+                    <div class="h-36 flex items-center justify-center text-xl font-bold text-white bg-purple-600 bg-opacity-90">
+                        TrackMe
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">TrackMe - Tracker App</h3>
+                        <p class="text-gray-600 mb-4 text-sm">An application designed to track user activities or metrics, featuring simple visualization of progress over a given timeframe.</p>
+                        <a href="https://alone-amethyst-pr0db1immp.edgeone.dev/" target="_blank" class="text-orange-600 hover:text-orange-800 font-semibold text-sm transition duration-300">
+                            View Live Project &rarr;
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 4: MyCV (Orange links) -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-xl transition duration-500 transform hover:scale-[1.03] hover:shadow-2xl">
+                    <div class="h-36 flex items-center justify-center text-xl font-bold text-white bg-red-600 bg-opacity-90">
+                        MyCV
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">MyCV - Personal Resume</h3>
+                        <p class="text-gray-600 mb-4 text-sm">A responsive online resume showcasing professional skills, experience, and education in a clean, professional format.</p>
+                        <a href="https://wily-jade-xx7quzsdsx.edgeone.dev/" target="_blank" class="text-orange-600 hover:text-orange-800 font-semibold text-sm transition duration-300">
+                            View Live Project &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Intermediate Projects -->
+            <h3 class="text-3xl font-semibold mb-8 text-gray-800 border-b border-gray-300 pb-2">Intermediate Level Projects</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Project 5: Weather Forecast (Orange links) -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-xl transition duration-500 transform hover:scale-[1.03] hover:shadow-2xl lg:col-span-2">
+                    <div class="h-36 flex items-center justify-center text-xl font-bold text-white bg-yellow-600 bg-opacity-90">
+                        Weather Forecast App
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">Weather Forecast App (API Integration)</h3>
+                        <p class="text-gray-600 mb-4 text-sm">A dynamic application using Vanilla JavaScript and API calls to fetch and display current and forecasted weather data for any location globally.</p>
+                        <a href="http://standard-apricot-p9gakljqfc.edgeone.dev" target="_blank" class="text-orange-600 hover:text-orange-800 font-semibold text-sm transition duration-300">
+                            View Live Project &rarr;
+                        </a>
+                    </div>
+                </div>
+                
+
+
+
+
+                <!-- Project 6: my porfolio(Orange links) -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-xl transition duration-500 transform hover:scale-[1.03] hover:shadow-2xl lg:col-span-2">
+                    <div class="h-36 flex items-center justify-center text-xl font-bold text-white bg-green-600 bg-opacity-90">
+                        MyPORTFOLIO App
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">My Portfolio</h3>
+                        <p class="text-gray-600 mb-4 text-sm">A modern portfolio showcasing my journey as a Frontend Developer & AI Engineer, featuring real-world projects, clean UI, responsive design, and performance-focused web solutions.</p>
+                        <a href="https://mammoth-blush-ulbfvj5a7i.edgeone.dev/" target="_blank" class="text-orange-600 hover:text-orange-800 font-semibold text-sm transition duration-300">
+                            View Live Project &rarr;
+                        </a>
+                    </div>
+                </div>
+
+
+
+                   <!-- Project 7: Html css and js compiler(Orange links) -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-xl transition duration-500 transform hover:scale-[1.03] hover:shadow-2xl lg:col-span-2">
+                    <div class="h-36 flex items-center justify-center text-xl font-bold text-white bg-green-600 bg-opacity-90">
+                       Html,css,js compiler
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">DevWeb</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Built DevWeb, a browser-based IDE with live HTML/CSS/JS preview and interactive console controls, showcasing frontend expertise in real-time code execution and UI design.</p>
+                        <a href="https://poised-gray-atnmwm1zr3.edgeone.dev/" target="_blank" class="text-orange-600 hover:text-orange-800 font-semibold text-sm transition duration-300">
+                            View Live Project &rarr;
+                        </a>
+                    </div>
+                </div>
+
+
+                      <!-- Project 8: C | C++ compiler(Orange links) -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-xl transition duration-500 transform hover:scale-[1.03] hover:shadow-2xl lg:col-span-2">
+                    <div class="h-36 flex items-center justify-center text-xl font-bold text-white bg-green-600 bg-opacity-90">
+                       C | c++ compiler
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">C | C++ CODE</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Built and deployed a C/C++ Smart Compiler Web Interface with live code execution and responsive UI, showcasing frontend development and interactive design skills.</p>
+                        <a href="https://monetary-emerald-phohnga2lr.edgeone.dev/" target="_blank" class="text-orange-600 hover:text-orange-800 font-semibold text-sm transition duration-300">
+                            View Live Project &rarr;
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+                <!-- Placeholder for future Intermediate Projects -->
+                <div class="bg-gray-200 rounded-xl overflow-hidden shadow-inner flex items-center justify-center p-5 text-gray-500 italic lg:col-span-5">
+                    More Intermediate and Advanced projects coming soon!
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Dark Blue/Gray Background with Orange Accent) -->
+    <section id="contact" class="py-20 px-6 bg-gray-900 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-16 relative text-white">
+                Get In Touch
+                <!-- Orange underline -->
+                <div class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 h-1 w-16 bg-orange-500 rounded"></div>
+            </h2>
+            <p class="text-xl font-light mb-10 text-gray-300">
+                I am currently open to new career opportunities and exciting freelance projects. Let's build something great together.
+            </p>
+            
+            <div class="flex justify-center flex-wrap gap-4 mb-10">
+                 <!-- Email Button (Orange) -->
+                 <a href="mailto:trishanadhwaryu@gmail.com" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    Send Me an Email
+                 </a>
+                 <!-- WhatsApp Button (Green - kept for identity) -->
+                 <a href="https://wa.me/916296689852" target="_blank" class="bg-transparent border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    WhatsApp (6296689852)
+                 </a>
+            </div>
+            
+            <div class="flex justify-center space-x-6">
+                <a href="https://github.com/meantaran" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-lg">GitHub</a>
+                <a href= "https://www.linkedin.com/in/antaran-adhwaryu-1b18983a3/" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-lg">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white text-center py-5 text-sm">
+        <p>&copy; 2025 Antaran Adhwaryu. Built with Tailwind CSS.</p>
+    </footer>
+
+    <script>
+        /* --- JAVASCRIPT --- */
+        
+        // --- Navigation Logic ---
+        const burger = document.querySelector('.burger');
+        const nav = document.getElementById('mobile-menu');
+        const navLinks = nav.querySelectorAll('a'); 
+
+        const navSlide = () => {
+            nav.classList.toggle('hidden'); 
+            burger.classList.toggle('toggle');
+        };
+        
+        burger.addEventListener('click', navSlide);
+
+        const closeMenu = () => {
+             if (!nav.classList.contains('hidden')) {
+                nav.classList.add('hidden');
+                burger.classList.remove('toggle');
+            }
+        }
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                closeMenu(); 
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // --- Chart.js Initialization (Colors updated to match Orange/Blue scheme) ---
+        
+        window.onload = function() {
+            // Function to create a bar chart
+            const createBarChart = () => {
+                const ctxBar = document.getElementById('technicalSkillChart').getContext('2d');
+                new Chart(ctxBar, {
+                    type: 'bar',
+                    data: {
+                        labels: ['HTML', 'CSS', 'JavaScript', 'Responsive Design', 'UI/UX', 'Python', 'C', 'AI/ML', 'Data Structures'],
+                        datasets: [{
+                            label: 'Proficiency (%)',
+                            data: [95, 90, 85, 90, 70, 75, 60, 65, 55],
+                            backgroundColor: [
+                                'rgba(249, 115, 22, 0.8)', // Orange
+                                'rgba(234, 179, 8, 0.8)', // Amber/Yellow
+                                'rgba(59, 130, 246, 0.8)', // Blue
+                                'rgba(249, 115, 22, 0.8)', // Orange
+                                'rgba(99, 102, 241, 0.8)', // Indigo (Darker Blue)
+                                'rgba(251, 146, 60, 0.8)', // Orange
+                                'rgba(107, 114, 128, 0.8)', // Gray
+                                'rgba(59, 130, 246, 0.8)', // Blue
+                                'rgba(139, 92, 246, 0.8)', // Violet
+                            ],
+                            borderColor: [
+                                'rgba(249, 115, 22, 1)',
+                                'rgba(234, 179, 8, 1)',
+                                'rgba(59, 130, 246, 1)',
+                                'rgba(249, 115, 22, 1)',
+                                'rgba(99, 102, 241, 1)',
+                                'rgba(251, 146, 60, 1)',
+                                'rgba(107, 114, 128, 1)',
+                                'rgba(59, 130, 246, 1)',
+                                'rgba(139, 92, 246, 1)',
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        indexAxis: 'y', // Horizontal bars
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                max: 100,
+                                ticks: {
+                                    callback: function(value) { return value + "%" }
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Technical Skills by Proficiency',
+                                font: { size: 16, weight: 'bold' }
+                            }
+                        }
+                    }
+                });
+            };
+
+            // Function to create a pie chart
+            const createPieChart = () => {
+                const ctxPie = document.getElementById('toolSkillChart').getContext('2d');
+                new Chart(ctxPie, {
+                    type: 'pie',
+                    data: {
+                        labels: ['VS Code', 'Git & GitHub', 'Canva'],
+                        datasets: [{
+                            label: 'Tool Usage Focus',
+                            data: [45, 35, 20], // Adjusted values for distribution
+                            backgroundColor: [
+                                'rgba(249, 115, 22, 0.8)', // Orange
+                                'rgba(52, 211, 153, 0.8)', // Green (kept for Git)
+                                'rgba(59, 130, 246, 0.8)', // Blue
+                            ],
+                            hoverOffset: 15,
+                            borderColor: '#fff',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    font: { size: 14 }
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tools & Platform Familiarity',
+                                font: { size: 16, weight: 'bold' }
+                            }
+                        }
+                    }
+                });
+            };
+
+            createBarChart();
+            createPieChart();
+        };
+    </script>
+</body>
+</html>
